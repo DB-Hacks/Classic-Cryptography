@@ -1,0 +1,20 @@
+Major US cities including Baltimore and New Orleans were both struck by ransomware attacks over the last few months.
+Over 113 government entities were targeted by ransomware attacks in 2019.
+What happened?
+
+Ransomware attacks wreaked havoc around the globe last year by holding systems and data hostage at many affected organizations. According to a recent report by Emsisoft, the potential cost of ransomware in the United States last year was over $7.5 billion. The local governments and public institutions across the country increasingly became targets for ransomware operators in 2019. As per the Emsisoft report, the organizations hit by ransomware in 2019 include:
+
+113 governments and agencies
+764 healthcare providers
+1,233 individual schools
+Major US cities including Baltimore and New Orleans were both struck by ransomware attacks last month.
+
+Who said what?
+
+The State Auditor of Mississippi said it is due to the “disregard for cybersecurity in state government.” Research from the University of Maryland concluded bluntly that “most American local governments do a poor job practicing cybersecurity.”
+
+However, it just not a problem just for small towns and their agencies. Not more than a week ago, a US Coast Guard facility was forced to operate offline for over 30 hours when a ransomware attack hit it.
+
+The final word
+
+It’s better to safeguard yourself by first mapping the attack surface, patching and updating your security systems, isolating recovery and backing up data, and last but not the least, educate employees on security measures since human error still tops the list of causes that lead to cyber incidents.
