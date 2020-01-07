@@ -1,4 +1,5 @@
 package Caesar;
+
 import Utility.CryptoTools;
 
 public class Caesar
@@ -10,6 +11,7 @@ public class Caesar
 		byte[] raw = CryptoTools.fileToBytes("Data/PT_MSG.txt");	//Test Case: Major US cities including Baltimore and New Orleans were both struck by ransomware attacks over the last few months. ...
 		byte[] pt = CryptoTools.clean(raw);		//The raw message has to to be cleaned of non-letters in order to properly encrypt with ASCII values
 		byte[] ct = new byte[pt.length];
+		
 		for (int i = 0; i < pt.length; i++)
 		{
 			ct[i] = (byte) ((pt[i] - 'A' + key) % 26 + 'A');	//Shift each letter's position in the alphabet by the value of the key
@@ -18,8 +20,10 @@ public class Caesar
 		
 		System.out.println("PT = " + new String(pt));	//Test Case: MAJORUSCITIESINCLUDINGBALTIMOREANDNEWORLEANSWEREBOTHSTRUCKBYRANSOMWAREATTACKSOVERTHELASTFEWMONTHS ...
 		System.out.println("CT = " + new String(ct));	//Test Case: PDMRUXVFLWLHVLQFOXGLQJEDOWLPRUHDQGQHZRUOHDQVZHUHERWKVWUXFNEBUDQVRPZDUHDWWDFNVRYHUWKHODVWIHZPRQWKV ...
+		
 		//----------------------------------------------Decrypt
 		byte[] bk = new byte[ct.length];
+		
 		for (int i = 0; i < ct.length; i++)
 		{
 			int tmp = (ct[i] - 'A' - key) % 26;
