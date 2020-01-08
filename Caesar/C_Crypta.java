@@ -5,11 +5,12 @@ import Utility.CryptoTools;
 public class C_Crypta {
 	public static void main(String[] args) throws Exception
 	{
-		byte[] ct = CryptoTools.fileToBytes("C:\\Users\\Danie\\eclipse-workspace\\Labs\\EECS3481\\src\\data\\MSG2.ct");
+		byte[] ct = CryptoTools.fileToBytes("Data/CT_MSG3.txt");	//Test Case: XKBTPQRAVPELTPQEXQQOXAFQFLKXIJXOHBOPLCXZLJMRQBOKBQTLOHPOBPFIFBKZBXOBKLQPLIBIVBCCBZQFSBFKABQBOJFKFKDFQPXYFIFQVQLXZZLJMIFPEJFPPFLKP ...
+		byte[] bk = new byte[ct.length];	
 		int[] freq = CryptoTools.getFrequencies(ct);
 		double letr = 0;
 		double highest = 0;
-		int positionE = 0;
+		int positionE = 0; //Where 'E' is located in the alphabet
 		int key = 0;
 		for(int i = 0; i < freq.length; i++) {
 			letr = (double) (freq[i])/(ct.length); 	//Calculate the frequency of letters throughout the cipher
@@ -18,16 +19,39 @@ public class C_Crypta {
 				positionE = i + 1;
 			}
 		}
-		key = 5 - positionE;
-		if	(key < 0)
-			key = -key;
 		
-		System.out.println("Key Option 1: " + key); 	//Test Case: Key Option 1: 4
+		if	(positionE > 5) {
+			key = -(5 - positionE);
+			
+			System.out.println("Key: " + key);
+			
+			for (int i = 0; i < ct.length; i++)
+			{
+				int tmp = (ct[i] - 'A' - key) % 26;
+				if (tmp < 0) tmp+= 26;		
+				bk[i] = (byte) (tmp + 'A');
+			}
+			
+			System.out.println("BK: " + new String(bk));
+		}
 		
-		key = positionE - 5;
-		if	(key < 0)
-			key = key + 26;
+		else if(positionE < 5) { 	//If 'E' is before its position in the alphabet add 26 to the key to loop it around 
+			key = positionE + 21;
+			
+			System.out.println("Key: " + key);		//Test Case: Key Option 2: 23
+			
+			for (int i = 0; i < ct.length; i++)
+			{
+				int tmp = (ct[i] - 'A' - key) % 26;
+				if (tmp < 0) tmp+= 26;		
+				bk[i] = (byte) (tmp + 'A');
+			}
+			
+			System.out.println("BK: " + new String(bk)); 	//Test Case: ANEWSTUDYSHOWSTHATTRADITIONALMARKERSOFACOMPUTERNETWORKSRESILIENCEARENOTSOLELYEFFECTIVEINDETERMININGITSABILITYTOACCOMPLISHMISSIONS ...			
+		}
 		
-		System.out.println("Key Option 2: " + key);		//Test Case: Key Option 2: 22
+		else {		//Not encrypted
+			System.out.println("PT: " + new String(ct));
+		}
 	}
 }
