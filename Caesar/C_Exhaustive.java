@@ -2,7 +2,6 @@ package Caesar;
 
 import Utility.CryptoTools;
 
-//An exhaustive attack on the Caesar cipher
 public class C_Exhaustive {
 	public static void main(String[] args) throws Exception
 	{
@@ -26,7 +25,7 @@ public class C_Exhaustive {
 			{
 				dot += ((freq[k])*(CryptoTools.ENGLISH[k]));	//calculate the dot product of the decrypted message frequency with the English language frequency
 			}
-			if	(dot > highest)	{ 	//Highest dot product is the correct decryption, hence the highest value is being stored
+			if	(dot > highest)	{ 	//Highest dot product is the correct decryption
 				highest = dot;
 				key = i;
 			}
