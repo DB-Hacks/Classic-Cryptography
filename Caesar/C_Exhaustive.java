@@ -8,7 +8,7 @@ public class C_Exhaustive {
 		double dot = 0;
 		int key = 0;
 		double highest = 0;
-		byte[] ct = CryptoTools.fileToBytes("Data/CT_MSG.txt");		//Test Case: NWNPXUNZZRENGGNPXVFZHPUZBERQVSSVPHYGGBQRGRPGORPNHFRBSGURSCTNFQVERPGNPPRFFGBFLFGRZERFBHEPRF ...
+		byte[] ct = CryptoTools.fileToBytes("Data/CT_MSG2.txt");		//Test Case: NWNPXUNZZRENGGNPXVFZHPUZBERQVSSVPHYGGBQRGRPGORPNHFRBSGURSCTNFQVERPGNPPRFFGBFLFGRZERFBHEPRF ...
 		byte[] bk = new byte[ct.length];
 		
 		//Loop through every possible key
