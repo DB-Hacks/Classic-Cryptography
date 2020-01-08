@@ -27,7 +27,7 @@ public class Caesar
 		for (int i = 0; i < ct.length; i++)
 		{
 			int tmp = (ct[i] - 'A' - key) % 26;
-			if (tmp < 0) tmp+= 26;		//if the ASCII value falls below zero, 26 is added to loop it back around
+			if (tmp < 0) tmp+= 26;		
 			bk[i] = (byte) (tmp + 'A');
 		}	
 		
