@@ -1,24 +1,25 @@
-package foundation;
+package Affine;
 
-import util.CryptoTools;
+import Utility.CryptoTools;
 import java.math.BigInteger;
 
 public class A_Exhaustive {
 	public static void main(String[] args) throws Exception
 	{
-		byte[] ct = CryptoTools.fileToBytes("C:\\Users\\Danie\\eclipse-workspace\\Labs\\EECS3481\\src\\data\\MSG3.ct");
+		byte[] ct = CryptoTools.fileToBytes("Data/CT_MSG5.txt");	//Test Case: TNSPKDLKDMTKEISVENQDGSLSDUSMTNQTQECXSFQTTQEIOQMFSMRKDMUXPSZKFQTFQLUDGKATQGSUDQAGAMT ...
 		byte[] pt = new byte[ct.length];
 		byte[] bk = new byte[ct.length];
 		int[] freq;
 		int dot = 0;
 		int maxDot = 0;
 		
+		int alphaKey = 0;
+		int betaKey = 0;
 		int alpha = 0;
 		int beta = 0;
 		int maxAlpha = 0;
 		int maxBeta = 0;
-		BigInteger alphabet;
-		alphabet = new BigInteger("26");
+		BigInteger alphabet = new BigInteger("26");
 		for(int a = 1; a < 26; a++) {
 			for(int b = 0; b < 26; b++) {
 				for(int i = 0; i < ct.length; i++) {
@@ -37,19 +38,19 @@ public class A_Exhaustive {
 					maxAlpha = alpha;
 					maxBeta = beta;
 				}
-				System.out.println("Alpha key: " + alpha + " - Beta key: " + beta + " - Dot Product: " + dot);
 				dot = 0;
 			}
 		}
-		System.out.println("Correct - Alpha key: " + maxAlpha + " - Beta key: " + maxBeta + " - Dot Product: " + maxDot);
 		//-------------Decrypt-----------
-		int alphaKey = 5;
-		int betaKey = 14;
+		alphaKey = maxAlpha;
+		betaKey = maxBeta;
+		
+		System.out.println("Alpha key: " + maxAlpha + " - Beta key: " + maxBeta); //Test Case: Alpha key: 7 - Beta key: 16
+		
 		for(int i = 0; i < ct.length; i++) {
 			bk[i] = (byte)((ct[i] - 'A' - betaKey + 26)*(BigInteger.valueOf(alphaKey).modInverse(alphabet).intValue()) %26 + 'A');
 		}
-		System.out.println(new String(bk));
 		
-		//first word Election
+		System.out.println("BK = " + new String(bk));	//Test Case: THELONDONSTOCKEXCHANGEDENIESTHATACYBERATTACKWASRESPONSIBLEFORATRADINGOUTAGEINAUGUST ...
 	}
 }
