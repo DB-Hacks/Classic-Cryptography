@@ -1,0 +1,28 @@
+The attack closely resembles the modus operandi of known Iranian state-sponsored hackers.
+Saudi CNA officials stated that the point of entry was the company's VPN servers.
+A business technology news website revealed that Bapco, which is Bahrain's national oil company, was attacked by Iranian hackers during late December.
+
+What happened?
+
+Iranian state-sponsored hackers attacked on the network of Bapco, Bahrain’s oil company. The hackers deployed a new strain of data-wiping malware called Dustman. The incident took place on December 29, 2019. It affected only a portion of Bapco's computer systems. The company continued operating even after the malware detection.
+
+According to some experts, the Bapco attack resembles the modus operandi of known Iranian state-sponsored hackers.
+
+Dustman, the data-wiping malware
+
+Bapco attack saw the use of this new strain of malware which could be an upgraded and more advanced version of the ZeroCleare wiper (first discovered in September 2019), Saudi Arabia's cyber-security agency said.
+
+Dustman is the third different data-wiping malware linked to the Tehran regime. IBM X-Force has earlier linked Iranian hackers with ZeroCleare, which, in turn, had multiple code similarities with the original Shamoon wiper malware.
+
+A common component shared between all three strains is EldoS RawDisk, a legitimate software toolkit for interacting with files, disks, and partitions.
+
+The attacks only differ when these malware strains are used with different exploits and techniques to advance initial access to admin-level, from where they unpack and propel the EldoS RawDisk utility to wipe data on infected hosts.
+
+Details on the attack
+
+According to a Saudi Arabia CNA report, attackers failed to execute their expected plan. They deployed Dustman and triggered the data-wiping process as a last-ditch effort to hide their forensic tracks. In the meantime, they also made a series of mistakes that could have revealed their presence on the hacked network.
+
+Saudi CNA officials stated that the point of entry was the company's VPN servers, form where hackers escalated their access to the local domain controller.
+The CNA report cites "remote execution vulnerabilities in a VPN appliance that was disclosed in July 2019" as the attackers' point of entry into Bapco's network.
+It is contemplated that Bapco may not be the only victim of an attack with the Dustman malware.
+However, after the discovery of the attack, Saudi officials sent the alert to local companies active in the energy market, warning them of impending attacks and also urging companies to secure their networks meanwhile.
