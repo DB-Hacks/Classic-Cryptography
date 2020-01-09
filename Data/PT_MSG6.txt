@@ -1,0 +1,3 @@
+It highlights the unique aspects of the specialized applications and protocols that ICS system operators typically use.
+It can also help with the development of incident response playbooks, prioritizing defenses as well as finding gaps.
+Recently, MITRE released an ATT&CK knowledge-base of the tactics and techniques that adversaries use while attacking the Industrial Control Systems (ICS) worldwide. The outcome of such attacks can range from interruption in operations like power outage to serious harm to human life and the surrounding environment.
