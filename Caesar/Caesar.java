@@ -16,7 +16,7 @@ public class Caesar
 		{
 			ct[i] = (byte) ((pt[i] - 'A' + key) % 26 + 'A');	//Shift each letter's position in the alphabet by the value of the key
 		}
-		CryptoTools.bytesToFile(ct, "CT_MSG.txt");
+		CryptoTools.bytesToFile(ct, "Data/CT_MSG.txt");
 		
 		System.out.println("PT = " + new String(pt));	//Test Case: MAJORUSCITIESINCLUDINGBALTIMOREANDNEWORLEANSWEREBOTHSTRUCKBYRANSOMWAREATTACKSOVERTHELASTFEWMONTHS ...
 		System.out.println("CT = " + new String(ct));	//Test Case: PDMRUXVFLWLHVLQFOXGLQJEDOWLPRUHDQGQHZRUOHDQVZHUHERWKVWUXFNEBUDQVRPZDUHDWWDFNVRYHUWKHODVWIHZPRQWKV ...
