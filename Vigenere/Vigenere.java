@@ -7,7 +7,6 @@ public class Vigenere {
 	{
 		byte[] pt = CryptoTools.fileToBytes("Data/PT_MSG6.txt");	//Test Case: It highlights the unique aspects of the specialized applications and protocols that ICS system operators typically use. ...
 		pt = CryptoTools.clean(pt);		//Test Case: ITHIGHLIGHTSTHEUNIQUEASPECTSOFTHESPECIALIZEDAPPLICATIONSANDPROTOCOLSTHATICSSYSTEMOPERATORSTYPICALLYUSE ...
-		System.out.println("CT = " + new String(pt));
 		byte[] ct = new byte[pt.length];
 		byte[] bk = new byte[pt.length];
 		byte[] ky = "SECURITY".getBytes();
